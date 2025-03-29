@@ -1,0 +1,43 @@
+[credential "https://github.com"]
+  helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = !/usr/bin/gh auth git-credential
+[core]
+  editor = code-insiders --wait
+  pager = bat
+[push]
+  followTags = true
+[alias]
+  s = !git status -s
+  st = !git status -v -v
+
+  br = branch
+
+  a = !git add --all
+  addl = !git add --patch
+  c = !git commit -m
+  ac = !git add --all && git commit -m
+  cne = !git commit --amend --no-edit
+  acne = !git add --all && git commit --amend --no-edit
+  cam = !git commit --amend
+
+  co = checkout
+
+  l = !git --no-pager log --oneline -n
+  ll = !git log --oneline
+  lr = !git --no-pager log --oneline --reverse -n
+  llr = !git log --oneline --reverse
+
+  psh = !git push origin HEAD
+  pullm = !git pull origin HEAD
+
+  remotes = !git remote -v
+  remao = !git remote add origin
+  repo = !git remote get-url origin
+
+  conf = !git config --global --edit
+[init]
+  defaultBranch = main
+[user]
+  name = Bruno Andrade
+  email = brunoan99@gmail.com
