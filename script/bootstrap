@@ -8,6 +8,7 @@ export CONFIG=$HOME/.config
 export RICE=$HOME/.rice
 
 . $DOT/utils/print_functions.sh
+. $DOT/system/setup_tools.sh
 
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
@@ -101,6 +102,6 @@ install_dotfiles () {
 }
 
 info "Setup Started"
-#setup_tools
+setup_tools
 install_dotfiles
 success "Setup Completed"
