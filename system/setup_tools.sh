@@ -7,7 +7,7 @@ setup_tools() {
   "debugedit" "fakeroot" "file" "findutils" "flex" "gawk"
   "gcc" "gettext" "grep" "groff" "gzip" "libtool" "m4" "make"
   "patch" "pkgconf" "sed" "sudo" "texinfo" "which"
-  "imagemagick" "ffmpeg" "less" "fzf" "net-tools" "zoxide")
+  "imagemagick" "ffmpeg" "less" "fzf" "net-tools" "zoxide" "neovim")
   for package in "${packages[@]}"; do
     info "Installing $package"
     # Check if the package is already installed on Ubuntu system
