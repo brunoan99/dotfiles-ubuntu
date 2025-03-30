@@ -1,0 +1,19 @@
+#!/bin/zsh
+#
+# This lets you quickly jump into a project remote repository.
+#
+# Type: open-repo
+#
+# if in a git repository then it will open the link for the remote
+# in the default browser in xdg-settings
+
+if git rev-parse --is-inside-work-tree > /dev/null 2>&1
+then
+  # TODO:
+    # instead of try open for each git project that the function ins called
+    # first verify if there are a remote origin defined
+    # otherwise it will put an ugly error in the command line
+  xdg-open "$(git remote get-url origin)"
+else
+  echo "Not in a git repository"
+fi

@@ -1,0 +1,4 @@
+#!/bin/zsh
+#
+# stop a docker container and remove it
+docker stop "$1" && docker rm "$1";

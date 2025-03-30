@@ -1,0 +1,5 @@
+#!/bin/zsh
+#
+# create directory and enter it
+local port=$(comm -23 <(seq 3000 8000 | sort) <(ss -Htan | awk '{print $4}' | cut -d':' -f2 | sort -u) | shuf | head -n 1);
+python -m http.server ${port}

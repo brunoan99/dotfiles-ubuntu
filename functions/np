@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Create a project and go to it
+
+mkdir -p "$HOME/workspace/$1" && cd "$HOME/workspace/$1" && git init --quiet;

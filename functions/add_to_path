@@ -1,0 +1,4 @@
+function add_to_path {
+    PATH=:$PATH
+    PATH=$1${PATH//:$1:/:}
+}
