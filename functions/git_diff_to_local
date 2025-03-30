@@ -1,0 +1,16 @@
+#!/bin/zsh
+#
+
+. $DOT/utils/print_functions.sh
+
+function git_diff_to_local {
+  if echo -e "\n$(git diff --color=always $DOT/zsh/zshrc.symlink | perl -wlne 'print $1 if /^\e\[32m\+\e\[m\e\[32m(.*)\e\[m$/')" >> $DOT/zsh/local-path.zsh.symlink; then
+    if git co $DOT/zsh/zshrc.symlink; then
+      success "Successfully wrote to $DOT/zsh/local-path.zsh.symlink and removed the changes from $DOT/zsh/zshrc.symlink"
+    else
+      fail "Error while checking out $DOT/zsh/zshrc.symlink"
+    fi
+  else
+    fail "Error while writing to $DOT/zsh/local-path.zsh.symlink"
+  fi
+}
