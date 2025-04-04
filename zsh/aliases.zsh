@@ -1,5 +1,6 @@
 # terminal
 alias reload='. ~/.zshrc'
+alias c='clear'
 
 # exa on ls
 alias ls='exa --icons -laa'                                           		# ls
