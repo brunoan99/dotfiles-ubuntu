@@ -12,6 +12,7 @@
   st = !git status -v -v
 
   br = branch
+  brr = !git br --remotes
 
   a = !git add --all
   addl = !git add --patch
@@ -29,7 +30,7 @@
   llr = !git log --oneline --reverse
 
   psh = !git push origin HEAD
-  pullm = !git pull origin HEAD
+  pullm = !git fetch && git pull origin HEAD
 
   remotes = !git remote -v
   remao = !git remote add origin
