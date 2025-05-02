@@ -3,18 +3,15 @@ alias reload='. ~/.zshrc'
 alias c='clear'
 
 # exa on ls
-alias ls='exa --icons -laa'                                           		# ls
-alias ll='ls -lbGF --no-filesize --no-user --no-time --git'                     # long list
-alias la='ls -lba  --no-filesize --no-user --no-time --git --color-scale'       # all list
-alias lt='exa --icons -lT --no-filesize --no-user --no-time --git --level=3'           # tree
+alias ls='exa --icons -l'
+alias la='exa --icons -laa'                                           		# ls
 
 # zoxide on cd
 alias cd='z'
 alias cdi="zi"
 
 # so
-#alias upgrade='sudo pacman -Syu --noconfirm && yay -Syu --noconfirm'
-#alias updt='upgrade && auto_clean'
+alias update='sudo apt update && sudo apt upgrade'
 
 # docker
 alias d='docker'
