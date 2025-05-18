@@ -11,7 +11,10 @@ alias cd='z'
 alias cdi="zi"
 
 # so
-alias update='sudo apt update && sudo apt upgrade'
+alias apt_update='sudo apt update && sudo apt -y upgrade'
+alias apt_clean='sudo apt autoremove -y'
+alias snap_update='sudo snap refresh'
+alias update='apt_update && apt_clean && snap_update'
 
 # docker
 alias d='docker'
