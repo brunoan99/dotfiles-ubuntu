@@ -49,6 +49,6 @@ unset config_files
 
 export STARSHIP_CONFIG=$DOT/zsh/starship.toml
 
-eval "$(starship init zsh)"
+verify_for_upgrade
 
-ask_for_upgrade
+eval "$(starship init zsh)"
