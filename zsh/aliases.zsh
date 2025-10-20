@@ -4,8 +4,8 @@ alias c='clear'
 alias e='exit'
 
 # exa on ls
-alias ls='exa --icons -l'
-alias la='exa --icons -laa'                                           		# ls
+alias ls='eza --icons -l'
+alias la='eza --icons -laa'                                           		# ls
 
 # zoxide on cd
 alias cd='z'
