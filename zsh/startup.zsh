@@ -1,6 +1,9 @@
+#!/bin/zsh
+
 ask_for_upgrade() {
   echo -n "Do you want to run system upgrade? [y/N]: "
-  read -t10 -k1 -s answer
+  read -t 5 -k1 answer
+  printf "\n"
   case "$answer" in
     [Yy]* ) update ;;
     * ) echo "Skipping upgrade." ;;
@@ -13,3 +16,5 @@ verify_for_upgrade() {
 
   if [[ "$last_upgrade_date" != "$current_date" ]]; then ask_for_upgrade; fi
 }
+
+ask_for_upgrade
