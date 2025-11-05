@@ -3,6 +3,9 @@ alias reload='. ~/.zshrc'
 alias c='clear'
 alias e='exit'
 
+# batcat
+alias bat=batcat
+
 # exa on ls
 alias ls='eza --icons -l'
 alias la='eza --icons -laa'                                           		# ls
