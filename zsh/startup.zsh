@@ -6,7 +6,7 @@ ask_for_upgrade() {
   printf "\n"
   case "$answer" in
     [Yy]* ) update ;;
-    * ) echo "Skipping upgrade." ;;
+    * ) echo "Skipping update." ;;
   esac
 }
 
