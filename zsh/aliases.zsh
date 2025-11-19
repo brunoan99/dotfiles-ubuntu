@@ -1,7 +1,9 @@
 # terminal
 alias reload='. ~/.zshrc'
 alias c='clear'
-alias e='exit'
+alias e="exit"
+alias ed='$EDITOR .'
+
 
 # batcat
 alias bat=batcat
