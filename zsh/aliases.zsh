@@ -34,3 +34,6 @@ alias cw='cargo-watch --clear --'
 
 # code
 alias codi='code-insiders'
+
+# conf
+alias conf="$EDITOR $DOT"
