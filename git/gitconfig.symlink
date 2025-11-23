@@ -1,8 +1,8 @@
 [credential "https://github.com"]
   helper = !/usr/bin/gh auth git-credential
 [core]
-  editor = code-insiders --wait
-  pager = bat
+  editor = $EDITOR --wait
+  pager = $PAGER
 [push]
   followTags = true
 [alias]
