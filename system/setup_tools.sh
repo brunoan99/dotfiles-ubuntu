@@ -8,7 +8,7 @@ setup_tools() {
    "binutils" "bison" "debugedit" "fakeroot" "file" "findutils" "flex" "gawk"
    "gcc" "gettext" "grep" "groff" "gzip" "libtool" "m4" "make" "patch" "pkgconf"
    "sed" "sudo" "texinfo" "gnu-which" "imagemagick" "ffmpeg" "less" "fzf"
-   "net-tools" "zoxide" "neovim" "unzip"
+   "net-tools" "zoxide" "neovim" "unzip eza"
   )
   for package in "${packages[@]}"; do
     # Check if the package is already installed on Ubuntu system
