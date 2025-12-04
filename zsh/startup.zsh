@@ -2,7 +2,7 @@
 
 ask_for_upgrade() {
   echo -n "Do you want to run system update? [y/N]: "
-  read -t 5 -k1 answer
+  read -k1 answer
   printf "\n"
   case "$answer" in
     [Yy]* ) update ;;
