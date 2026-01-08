@@ -11,6 +11,7 @@
 
   br = branch
   brr = !git br --remotes
+  brrr = !git br && git brr
 
   a = !git add --all
   addl = !git add --patch
