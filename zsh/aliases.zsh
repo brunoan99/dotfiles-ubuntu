@@ -4,13 +4,9 @@ alias c='clear'
 alias e="exit"
 alias ed='$EDITOR .'
 
-
-# batcat
-alias bat=batcat
-
 # exa on ls
-alias ls='eza --icons -l'
-alias la='eza --icons -laa'                                           		# ls
+alias ls='exa --icons -l'
+alias la='exa --icons -laa'                                           		# ls
 
 # zoxide on cd
 alias cd='z'
