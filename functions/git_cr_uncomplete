@@ -4,15 +4,17 @@
 . $DOT/utils/print_functions.sh
 
 info "Creating Commit to uncompleted changes"
-if git ac "uncomplete" --quiet; then ; else
+if git ac "uncomplete" --quiet; then
+  success "Commit created"
+else
   fail "Failed to commit"
   exit 1
 fi
-success "Commit created"
 
 info "Pushing uncompleted changes to remote"
-if git psh --quiet; then ; else
+if git psh --quiet; then
+  success "Uncompleted changes pushed to remote"
+else
   fail "Failed to push changes"
   exit 1
 fi
-success "Uncompleted changes pushed to remote"

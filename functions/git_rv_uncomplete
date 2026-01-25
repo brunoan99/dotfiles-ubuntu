@@ -6,20 +6,26 @@
 last_commit=$(GIT_PAGER=/usr/bin/less git show --pretty=format:"%s" -s HEAD)
 
 info "Checking commit message"
-if [[ "$last_commit" == "uncomplete" ]]; then :; else
+if [[ "$last_commit" == "uncomplete" ]]; then
+  success "Commit message checked"  
+else
   fail "Last commit message isn't 'uncomplete' aborting to reset commit"
   return
 fi
-success "Commit message checked"
+
 
 info "Reseting commit"
-if git reset --mixed --quiet HEAD^1; then :; else
+if git reset --mixed --quiet HEAD^1; then
+  success "Uncompleted changes reseted"
+else
   fail "Failed to Reset commit"
 fi
-success "Uncompleted changes reseted"
+
 
 info "Sending reset to remote"
-if git push origin +HEAD --quiet; then :; else
+if git push origin +HEAD --quiet; then
+  success "Uncompleted changes removed from remote"
+else
   fail "Failed to Send changes to remote"
 fi
-success "Uncompleted changes removed from remote"
+
