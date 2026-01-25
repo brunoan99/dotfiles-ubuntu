@@ -3,7 +3,9 @@
 # Expected flow
 # Check last commit message
 # | if "uncomplete" or "wip"
-#     | reset changes
+#     | uncommit changes
+#     | push to remote
+#     | commit changes with message
 #     | push to remote
 #
 # | if other
@@ -12,10 +14,11 @@
 . $DOT/utils/print_functions.sh
 
 last_commit=$(GIT_PAGER=/usr/bin/less git show --pretty=format:"%s" -s HEAD)
+message=$1
 
 info "Checking commit message"
 if [[ "$last_commit" == "wip" || "$last_commit" == "uncomplete" ]]; then
-  success "Commit message checked"
+  success "Commit message checked wip commit found"
 else
   fail "Last commit message isn't 'uncomplete' or 'wip' aborting to reset commit"
   exit 1
@@ -32,9 +35,25 @@ fi
 
 info "Sending reset to remote"
 if git push origin +HEAD --quiet; then
-  success "Uncompleted changes removed from remote"
+  success "Revert last commit from remote"
 else
-  fail "Failed to Send changes to remote"
+  fail "Failed to push revert commit"
+  exit 1
+fi
+
+info "Creating commit"
+if git ac "$message" --quiet; then
+  success "Commit created"
+else
+  fail "Failed to commit"
+  exit 1
+fi
+
+info "Pusing changes to remote"
+if git push origin --quiet; then
+  success "Completed changes pushed to remote"
+else
+  fail "Failed to push revert commit"
   exit 1
 fi
 

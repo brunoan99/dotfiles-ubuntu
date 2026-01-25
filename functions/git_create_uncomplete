@@ -1,20 +1,64 @@
 #!/bin/bash
 #
+# Expected flow
+# Check last commit message
+# | if "uncomplete" or "wip"
+#     | uncommit changes
+#     | push to remote
+#     | commit changes
+#     | push to remote
+#
+# | if other
+#     | create "uncomplete" commit
+#     | push to remote
+#
+# the reason to uncommit push then commit and push is to avoid needing to push using force
 
 . $DOT/utils/print_functions.sh
 
-info "Creating Commit to uncompleted changes"
-if git ac "uncomplete" --quiet; then
+
+last_commit=$(GIT_PAGER=/usr/bin/less git show --pretty=format:"%s" -s HEAD)
+already_wip=0
+
+info "Checking commit message"
+if [[ "$last_commit" == "wip" || "$last_commit" == "uncomplete" ]]; then
+  success "Commit message checked wip commit found"
+  already_wip=1
+else
+  success "Commit message checked wip commit not found"
+fi
+
+
+if [ "$already_wip" -eq 1 ]; then
+  info "Reseting commit"
+  if git reset --mixed --quiet HEAD^1; then
+    success "Uncompleted changes reseted"
+  else
+    fail "Failed to Reset commit"
+    exit 1
+  fi
+
+  info "Sending reset to remote"
+  if git push origin +HEAD --quiet; then
+    success "Revert last commit from remote"
+  else
+    fail "Failed to push revert commit"
+    exit 1
+  fi
+fi
+
+info "Creating commit"
+if git ac "wip" --quiet; then
   success "Commit created"
 else
   fail "Failed to commit"
   exit 1
 fi
 
-info "Pushing uncompleted changes to remote"
-if git psh --quiet; then
+info "Pusing changes to remote"
+if git push origin --quiet; then
   success "Uncompleted changes pushed to remote"
 else
-  fail "Failed to push changes"
+  fail "Failed to push revert commit"
   exit 1
 fi

@@ -36,7 +36,9 @@
   repo = !git remote get-url origin
 
   createuncomplete = !/home/snape/.dotfiles/functions/git_create_uncomplete
+  commituncomplete = !/home/snape/.dotfiles/functions/git_commit_uncomplete
   revertuncomplete = !/home/snape/.dotfiles/functions/git_revert_uncomplete
+
 
   conf = !git config --global --edit
 [init]
