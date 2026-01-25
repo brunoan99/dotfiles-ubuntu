@@ -35,8 +35,8 @@
   remao = !git remote add origin
   repo = !git remote get-url origin
 
-  createuncomplete = !/home/snape/.dotfiles/functions/git_cr_uncomplete
-  revertuncomplete = !/home/snape/.dotfiles/functions/git_rv_uncomplete
+  createuncomplete = !/home/snape/.dotfiles/functions/git_create_uncomplete
+  revertuncomplete = !/home/snape/.dotfiles/functions/git_revert_uncomplete
 
   conf = !git config --global --edit
 [init]
