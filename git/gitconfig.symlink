@@ -1,48 +1,49 @@
 [credential "https://github.com"]
-  helper = !/usr/bin/gh auth git-credential
+  	helper = !/usr/bin/gh auth git-credential
 [core]
-  editor = $EDITOR --wait
-  pager = $PAGER
+	editor = $EDITOR --wait
+  	pager = $PAGER
+  	hooksPath = /home/snape/.config/git/hooks
 [push]
-  followTags = true
+	followTags = true
 [alias]
-  s = !git status -s
-  st = !git status -v -v
+  	s = !git status -s
+  	st = !git status -v -v
 
-  br = branch
-  brr = !git br --remotes
-  brrr = !git br && git brr
+	br = branch
+	brr = !git br --remotes
+	brrr = !git br && git brr
 
-  a = !git add --all
-  addl = !git add --patch
-  c = !git commit -m
-  ac = !git add --all && git commit -m
-  cne = !git commit --amend --no-edit
-  acne = !git add --all && git commit --amend --no-edit
-  cam = !git commit --amend
+	a = !git add --all
+	addl = !git add --patch
+	c = !git commit -m
+	ac = !git add --all && git commit -m
+	cne = !git commit --amend --no-edit
+	acne = !git add --all && git commit --amend --no-edit
+	cam = !git commit --amend
 
-  co = checkout
+	co = checkout
 
-  l = !git --no-pager log --oneline -n
-  ll = !git log --oneline
-  lr = !git --no-pager log --oneline --reverse -n
-  llr = !git log --oneline --reverse
+	l = !git --no-pager log --oneline -n
+	ll = !git log --oneline
+	lr = !git --no-pager log --oneline --reverse -n
+	llr = !git log --oneline --reverse
 
-  psh = !git push origin HEAD
-  pullm = !git fetch && git pull origin HEAD
+	psh = !git push origin HEAD
+	pullm = !git fetch && git pull origin HEAD
 
-  remotes = !git remote -v
-  remao = !git remote add origin
-  repo = !git remote get-url origin
+	remotes = !git remote -v
+	remao = !git remote add origin
+	repo = !git remote get-url origin
 
-  createuncomplete = !/home/snape/.dotfiles/functions/git_create_uncomplete
-  commituncomplete = !/home/snape/.dotfiles/functions/git_commit_uncomplete
-  revertuncomplete = !/home/snape/.dotfiles/functions/git_revert_uncomplete
+	createuncomplete = !/home/snape/.dotfiles/functions/git_create_uncomplete
+	commituncomplete = !/home/snape/.dotfiles/functions/git_commit_uncomplete
+	revertuncomplete = !/home/snape/.dotfiles/functions/git_revert_uncomplete
 
 
-  conf = !git config --global --edit
+	conf = !git config --global --edit
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [user]
-  name = Bruno Andrade
-  email = brunoan99@gmail.com
+	name = Bruno Andrade
+	email = brunoan99@gmail.com
