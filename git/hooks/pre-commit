@@ -1,0 +1,14 @@
+#!/bin/bash
+
+. $DOT/utils/print_functions.sh
+
+last_commit=$(GIT_PAGER=/usr/bin/less git show --pretty=format:"%s" -s HEAD)
+
+info "Checking Last Commit Message"
+if [[ "$last_commit" == "wip" || "$last_commit" == "uncomplete" ]]; then
+	error "Last Commit Message indicates uncomplete Commit"
+	exit 1
+fi
+
+success "Ready To Commit"
+exit 0
