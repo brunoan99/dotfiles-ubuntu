@@ -2,5 +2,5 @@
 #
 # combine bat and git diff
 batdiff() {
-    git diff --name-only --relative --diff-filter=d -z | xargs -0 batcat --diff
+    git diff --name-only --relative --diff-filter=d -z | xargs -0 bat --diff
 }
