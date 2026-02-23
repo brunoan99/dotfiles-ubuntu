@@ -5,7 +5,7 @@ alias e="exit"
 alias ed='$EDITOR .'
 
 # exa on ls
-alias ls='exa --icons -l'
+alias l='exa --icons -l'
 alias la='exa --icons -laa'                                           		# ls
 
 # zoxide on cd
