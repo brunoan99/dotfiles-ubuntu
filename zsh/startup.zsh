@@ -20,7 +20,7 @@ ask_for_upgrade() {
 
 verify_for_upgrade() {
   if check_wsl; then
-    local last_upgrade_date=$(ls -l --time-style=long-iso /var/cache/apt/pkgcache.bin | cut -d ' ' -f4)
+    local last_upgrade_date=$(/usr/bin/exa -l --time-style=long-iso /var/cache/apt/pkgcache.bin | cut -d ' ' -f4)
     local current_date=$(date +%Y-%m-%d)
     if [[ "$last_upgrade_date" != "$current_date" ]]; then ask_for_upgrade; fi
   fi
