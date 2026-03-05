@@ -6,10 +6,12 @@ $git_branch\
 $git_state\
 $git_status\
 $fill\
-$cmd_duration $jobs $nodejs $sudo\
+$cmd_duration $jobs $rust $nodejs $java $sudo\
 $line_break\
 $character"""
 
+scan_timeout = 10
+command_timeout = 1000
 add_newline = false
 
 [fill]
@@ -48,6 +50,3 @@ symbol = "✦"
 style = "bold red"
 number_threshold = 1
 format = "[$symbol]($style)"
-
-[nodejs]
-symbol = ""
