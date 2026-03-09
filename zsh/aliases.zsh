@@ -21,6 +21,8 @@ alias update='apt_update && apt_clean && snap_update'
 # docker
 alias d='docker'
 alias dc='docker compose'
+alias dcup='docker compose up -d'
+alias dcdw='docker compose down'
 alias dcr='docker compose down && docker compose up -d'
 alias remove_containers='docker rm -f "$(docker ps -aq)"'
 alias clean_containers='docker container prune'
