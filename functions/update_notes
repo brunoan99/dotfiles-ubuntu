@@ -1,0 +1,8 @@
+#! /bin/zsh
+#
+# go to notes directory, commit and push changes to remote
+
+local actual_pwd=$(pwd);
+cd ~/shared/notes;
+eval './.scripts/update_git.sh'
+cd $actual_pwd;
