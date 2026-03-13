@@ -6,12 +6,10 @@ $git_branch\
 $git_state\
 $git_status\
 $fill\
-$cmd_duration $jobs $rust $nodejs $java $sudo\
+$cmd_duration $sudo\
 $line_break\
 $character"""
 
-scan_timeout = 10
-command_timeout = 1000
 add_newline = false
 
 [fill]
