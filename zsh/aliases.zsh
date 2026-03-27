@@ -3,6 +3,7 @@ alias reload='. ~/.zshrc'
 alias c='clear'
 alias e="exit"
 alias ed='$EDITOR .'
+alias bat='/usr/bin/batcat'
 
 # exa on ls
 alias l='exa --icons -l'
