@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Symlink all git hooks
+HOOKS_DIR="$CONFIG/git/hooks"
+mkdir -p "$HOOKS_DIR"
+
+for hook in $DOT/git/hooks/*; do
+  echo "Hook: $hook"
+  hook_name=$(basename "$hook")
+  echo "Hookname: $hook_name"
+  ln -sf "$DOT/git/hooks/$hook_name" "$HOOKS_DIR/$hook_name"
+  echo "Linked $hook_name -> $HOOKS_DIR/$hook_name"
+done
