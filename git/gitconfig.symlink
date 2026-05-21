@@ -1,7 +1,7 @@
 [credential "https://github.com"]
   	helper = !/usr/bin/gh auth git-credential
 [core]
-	editor = $EDITOR --wait
+	editor = /usr/bin/nvim
   	pager = $PAGER
   	hooksPath = /home/snape/.config/git/hooks
 [push]
