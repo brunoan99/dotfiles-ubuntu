@@ -22,3 +22,4 @@ eval "$(zoxide init zsh)"
 
 add_to_path "/usr/bin/vendor_perl"
 add_to_path "opt/fakeroot/bin"
+add_to_path "$HOME/.local/bin"
