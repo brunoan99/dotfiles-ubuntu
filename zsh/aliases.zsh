@@ -13,6 +13,9 @@ alias la='exa --icons -laa'                                           		# ls
 alias cd='z'
 alias cdi="zi"
 
+# git
+alias g='git'
+
 # so
 alias apt_update='sudo apt update && sudo apt -y upgrade'
 alias apt_clean='sudo apt autoremove -y'
