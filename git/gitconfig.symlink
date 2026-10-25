@@ -15,7 +15,6 @@
 	brrr = !git br && git brr
 
 	a = !git add --all
-	addl = !git add --patch
 	c = !git commit -m
 	ac = !git add --all && git commit -m
 	cne = !git commit --amend --no-edit
@@ -30,7 +29,9 @@
 	llr = !git log --oneline --reverse
 
 	psh = !git push origin HEAD
+	p = !git psh
 	pullm = !git fetch && git pull origin HEAD
+	pu = !git pullm
 
 	remotes = !git remote -v
 	remao = !git remote add origin
